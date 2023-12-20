@@ -1,0 +1,1364 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse Button</title>
+    <style>
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<button class="collapsible">Toggle Content</button>
+<div class="content">
+    <a href="index.html">home</a>
+</div>
+
+<script>
+    // Get the button element
+    var button = document.querySelector('.collapsible');
+
+    // Get the content element
+    var content = document.querySelector('.content');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Toggle the display of the content
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="collapseBtn">Collapse</button>
+    <button class="collapse" id="button1">Button 1</button>
+    <button class="collapse" id="button2">Button 2</button>
+    <button class="collapse" id="button3">Button 3</button>
+
+    <script>
+        const collapseBtn = document.getElementById('collapseBtn');
+        const buttons = document.querySelectorAll('.collapse');
+
+        collapseBtn.addEventListener('click', () => {
+            buttons.forEach(button => {
+                button.classList.toggle('collapsed');
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse Button</title>
+    <style>
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<button class="collapsible">Toggle Content 1</button>
+<div class="content">
+    <a href="index.html">home</a>
+</div>
+
+<button class="collapsible">Toggle Content 2</button>
+<div class="content">
+    <a href="about.html">about</a>
+</div>
+
+<button class="collapsible">Toggle Content 3</button>
+<div class="content">
+    <a href="contact.html">contact</a>
+</div>
+
+<script>
+    // Get all the button elements
+    var buttons = document.querySelectorAll('.collapsible');
+
+    // Get all the content elements
+    var contents = document.querySelectorAll('.content');
+
+    // Add a click event listener to each button
+    buttons.forEach(function (button, index) {
+        button.addEventListener('click', function() {
+            // Toggle the display of the corresponding content
+            if (contents[index].style.display === 'none') {
+                contents[index].style.display = 'block';
+            } else {
+                contents[index].style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Collapsible Button</title>
+    <style>
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<button class="collapsible">Toggle Content 1</button>
+<div class="content">
+    <p>This is the first content section.</p>
+</div>
+
+<button class="collapsible">Toggle Content 2</button>
+<div class="content">
+    <p>This is the second content section.</p>
+</div>
+
+<button class="collapsible" style="text-align: center;">Toggle Content 3</button>
+<div class="content">
+    <p style="text-align: center;"><a href="mts.html" style="text-align: center;">mts</a><br><a href="index.html" style="text-align: center;">home</a></p>
+</div>
+
+<script>
+    // Get all the button elements
+    var buttons = document.querySelectorAll('.collapsible');
+
+    // Add a click event listener to each button
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function() {
+            // Toggle the display of the corresponding content
+            var content = button.nextElementSibling;
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="trainSearchForm">
+    <label for="fromStation">From Station:</label>
+    <input type="text" id="fromStation" name="fromStation" required>
+
+    <label for="toStation">To Station:</label>
+    <input type="text" id="toStation" name="toStation" required>
+
+    <button type="button" onclick="searchTrains()">Search Trains</button>
+  </form>
+
+  <div id="searchResults"></div>
+
+  <script>
+    function searchTrains() {
+      var fromStation = document.getElementById('fromStation').value;
+      var toStation = document.getElementById('toStation').value;
+
+      // Perform a hypothetical API call to retrieve train information
+      // For demonstration purposes, let's just display a message
+      var searchResults = document.getElementById('searchResults');
+      searchResults.innerHTML = `<p>Searching trains from ${fromStation} to ${toStation}...</p>`;
+    }
+  </script>
+
+</body>
+</html>
+--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Search</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #searchResults {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="trainSearchForm">
+    <label for="fromStation">From Station:</label>
+    <input type="text" id="fromStation" name="fromStation" required>
+
+    <label for="toStation">To Station:</label>
+    <input type="text" id="toStation" name="toStation" required>
+
+    <button type="button" onclick="searchTrains()">Search Trains</button>
+  </form>
+
+  <div id="searchResults"></div>
+
+  <script>
+    function searchTrains() {
+      var fromStation = document.getElementById('fromStation').value;
+      var toStation = document.getElementById('toStation').value;
+
+      // Perform a hypothetical API call to retrieve train information
+      // For demonstration purposes, let's just display a message
+      var searchResults = document.getElementById('searchResults');
+      searchResults.innerHTML = `<p>Searching trains from ${fromStation} to ${toStation}...</p>`;
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Ticketing Train System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    label {
+      margin-bottom: 8px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>E-Ticketing Train System</h1>
+  </header>
+
+  <main>
+    <form id="ticketBookingForm">
+      <label for="fromStation">From Station:</label>
+      <input type="text" id="fromStation" name="fromStation" required>
+
+      <label for="toStation">To Station:</label>
+      <input type="text" id="toStation" name="toStation" required>
+
+      <label for="departureDate">Departure Date:</label>
+      <input type="date" id="departureDate" name="departureDate" required>
+
+      <label for="ticketClass">Ticket Class:</label>
+      <select id="ticketClass" name="ticketClass" required>
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+        <option value="firstClass">First Class</option>
+      </select>
+
+      <button type="button" onclick="bookTicket()">Book Ticket</button>
+    </form>
+
+    <div id="bookingConfirmation"></div>
+  </main>
+
+  <script>
+    function bookTicket() {
+      var fromStation = document.getElementById('fromStation').value;
+      var toStation = document.getElementById('toStation').value;
+      var departureDate = document.getElementById('departureDate').value;
+      var ticketClass = document.getElementById('ticketClass').value;
+
+      // Perform a hypothetical API call to book a ticket
+      // For demonstration purposes, let's just display a confirmation message
+      var bookingConfirmation = document.getElementById('bookingConfirmation');
+      bookingConfirmation.innerHTML = `
+        <h2>Booking Confirmation</h2>
+        <p>Train ticket booked from ${fromStation} to ${toStation} on ${departureDate} (${ticketClass} class).</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
+--
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Login Form</title>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <style>
+  body
+  {
+    background: url(back.png) no-repeat center center;
+  }
+  .form
+  {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -5px -5px rgba(0,0,0,0.5);
+    border-radius: 25px;
+  }
+  .form h1{
+    color: white;
+    font-size: 2rem;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+    margin: 50px;
+  }
+  .box{
+    padding: 12px;
+    margin: 20px;
+    width: 65%;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+  }
+  #submit{
+ padding: 10px 20px;
+ margin-top: 50px;
+ width: 50%;
+ background-color: rgba(0, 0, 0, 0.5);
+ box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+ color: white;
+ border: none;
+ outline: none;
+ border-radius: 20px;
+ font-size: 1rem;
+  }
+  #submit:hover
+  {
+    cursor: pointer;
+    background-color: rgba(255, 2555, 255, 0.1);
+    color: white;
+
+  }
+  ::placeholder
+  {
+    color: white;
+    opacity: 0.7;
+  }
+ </style>
+ <body>
+  <form action="" class="form">
+    <h1>Login</h1>
+    <input type="email" name="email" class="box" placeholder="Enter Username">
+    <input type="password" name="password" class="box" placeholder="Enter Password">
+    <input type="submit" value="Login" id="submit">
+  </form>
+ </body>
+ </html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Indian Train Schedule</title>
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Indian Train Schedule</h1>
+
+        <label for="trainNumber">Enter Train Number: </label>
+        <input type="text" id="trainNumber" placeholder="Enter train number">
+        <button onclick="getTrainData()">Get Train Data</button>
+
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Train Number</th>
+                    <th>Train Name</th>
+                    <th>Arriving Station</th>
+                    <th>Final Station</th>
+                    <th>Days</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-Train schedule rows will be dynamically added here using JavaScript -
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const trainSchedule = [
+        { 
+            trainNumber: 'T001',
+            trainName: 'Express 1',
+            arrivingStation: 'Station A',
+            finalStation: 'Station Z',
+            days: ['Monday', 'Wednesday', 'Friday']
+        },
+        { 
+            trainNumber: 'T002',
+            trainName: 'Superfast 2',
+            arrivingStation: 'Station B',
+            finalStation: 'Station Y',
+            days: ['Tuesday', 'Thursday', 'Saturday']
+        },
+        { 
+            trainNumber: 'T003',
+            trainName: 'Local 3',
+            arrivingStation: 'Station C',
+            finalStation: 'Station X',
+            days: ['Sunday']
+        },
+    ];
+
+    function getTrainData() {
+        const trainNumber = document.getElementById('trainNumber').value.toUpperCase();
+        const selectedTrain = trainSchedule.find(train => train.trainNumber.toUpperCase() === trainNumber);
+
+        clearTable();
+
+        if (selectedTrain) {
+            const tableBody = document.querySelector('#scheduleTable tbody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${selectedTrain.trainNumber}</td>
+                <td>${selectedTrain.trainName}</td>
+                <td>${selectedTrain.arrivingStation}</td>
+                <td>${selectedTrain.finalStation}</td>
+                <td>${selectedTrain.days.join(', ')}</td>
+            `;
+            tableBody.appendChild(row);
+        } else {
+            alert('Train not found. Please enter a valid train number.');
+        }
+    }
+
+    function clearTable() {
+        const tableBody = document.querySelector('#scheduleTable tbody');
+        tableBody.innerHTML = '';
+    }
+});
+
+    </script>
+</body>
+</html>
+--
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Collapsible Buttons</title>
+</head>
+<style>
+  .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+</style>
+<script>
+  function toggleCollapsible(sectionNumber) {
+  var content = document.getElementById("collapsible-section-" + sectionNumber);
+  if (content.style.display === "block") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
+}
+
+</script>
+<body>
+
+  <div class="collapsible-container">
+    <button class="collapsible-btn" onclick="toggleCollapsible(1)">Toggle Section 1</button>
+    <div class="collapsible-content" id="collapsible-section-1">
+      <p>This is the content of section 1.</p>
+    </div>
+  </div>
+
+  <div class="collapsible-container">
+    <button class="collapsible-btn" onclick="toggleCollapsible(2)">Toggle Section 2</button>
+    <div class="collapsible-content" id="collapsible-section-2">
+      <p>This is the content of section 2.</p>
+    </div>
+  </div>
+
+  
+</body>
+</html>
+--
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes moveText {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: moveText 10s linear infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="moving-text">
+    This text is moving slowly in a line.
+  </div>
+
+</body>
+</html>
+
+</html>
+--
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Cancellation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="cancellationForm">
+        <h2>Ticket Cancellation Form</h2>
+        <label for="ticketNumber">Ticket Number:</label>
+        <input type="text" id="ticketNumber" name="ticketNumber" required>
+
+        <label for="reason">Reason for Cancellation:</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+
+        <button type="button" onclick="cancelTicket()">Cancel Ticket</button>
+    </form>
+
+    <script>
+        function cancelTicket() {
+            var ticketNumber = document.getElementById('ticketNumber').value;
+            var reason = document.getElementById('reason').value;
+
+            // You can add further validation or processing logic here
+
+            // For now, let's just log the details to the console
+            console.log('Ticket Number:', ticketNumber);
+            console.log('Reason for Cancellation:', reason);
+
+            // You can also add an AJAX request here to submit the form data to the server
+        }
+    </script>
+
+</body>
+</html>
+--
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, main, footer {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    background-color: #fff;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+#disclaimer, #terms {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+}
+
+#terms a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #fff;
+}
+
+#terms a:hover {
+    color: #ccc;
+}
+
+</style>
+<body>
+
+    <header>
+        <h1>Your Website</h1>
+    </header>
+
+    <main>
+        <p>This is the main content of your website.</p>
+    </main>
+
+    <footer>
+        <div id="disclaimer">Disclaimer: This is a sample website.</div>
+        <div id="terms"><a href="#" onclick="showTerms()">Terms and Conditions</a></div>
+    </footer>
+
+    <script>
+      function showTerms() {
+    alert("Terms and Conditions:\nThis is a sample website. Replace this with your actual terms and conditions.");
+}
+
+    </script>
+</body>
+<style>
+  body{
+    color: black;
+  }
+</style>
+</html>
+<script>
+  
+</script>
+--
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Payment Form</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Payment Details</h1>
+        <form id="paymentForm">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" maxlength="19" required>
+            
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="***" maxlength="3" required>
+
+            <button type="button" onclick="submitPayment()">Submit Payment</button>
+        </form>
+    </div>
+
+    <script>function submitPayment() {
+      // You can add payment processing logic here.
+      alert("Payment submitted successfully!");
+  }
+  </script>
+</body>
+</html>
+
+
+--
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!- Simulate a smartphone / tablet ->
+<div class="mobile-container">
+
+ 
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+  <h3>Vertical Mobile Navbar</h3>
+  <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+  <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+</div>
+
+<!- End smartphone / tablet look -
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+      padding: 0;
+      margin: 0;
+      background-color: floralwhite;
+  }
+ 
+  h1{
+      margin-top: 50px;
+      margin-left: 510px;
+      font-size: 60px;
+      font-family: 'Karla', sans-serif;
+      font-weight: lighter;
+  }
+ 
+  .slider-frame{
+      overflow: hidden;
+      height: 800px;
+      width: 1200px;
+      margin-left: 360px;
+      margin-top: 20px;
+  }
+ 
+  /*---------- SLIDE ANIMATION --------------*/
+ 
+ 
+  @keyframes slide_animation{
+      0% {left:0px;}
+      10% {left:0px;}
+      20% {left:1200px;}
+      30% {left:1200px;}
+      40% {left: 2400px;}
+      50% {left: 2400px;}
+      60% {left: 1200px;}
+      70% {left: 1200px;}
+      80% {left: 0px;}
+      90% {left: 0px;}
+      100% {left:0px;}
+  }
+ 
+  @-webkit-keyframes slide_animation{
+      0% {left:0px;}
+      10% {left:0px;}
+      20% {left:1200px;}
+      30% {left:1200px;}
+      40% {left: 2400px;}
+      50% {left: 2400px;}
+      60% {left: 1200px;}
+      70% {left: 1200px;}
+      80% {left: 0px;}
+      90% {left: 0px;}
+      100% {left:0px;}
+  }
+ 
+  .slide-images{
+      width: 3600px;
+      height: 800px;
+      margin: 0 0 0 -2400px;
+      position: relative;
+      -webkit-animation-name: slide_animation;
+      animation-name: slide_animation;
+      -webkit-animation-duration: 33s;
+      animation-duration: 33s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+  }
+ 
+  .img-container{
+      height: 800px;
+      width: 1200px;
+      position: relative;
+      float: left;
+  }
+ 
+</style>
+<body>
+  
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+        <title>slide image tutorial</title>
+    </head>
+    
+    <h1>Auto - Image Slider HTML and CSS</h1>
+    <div class="slider-frame">
+        <div class="slide-images">
+                <div class="img-container">
+                    <img src="login 1.jpg">
+                </div>
+                <div class="img-container">
+                    <img src="re1.png">
+                </div>
+                <div class="img-container">
+                    <img src="Maharaja.jpg">
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Make a Payment</h1>
+  <p>Select your payment method:</p>
+
+  <form action="#" method="post" id="paymentForm">
+    <label for="upi">
+      <input type="radio" id="upi" name="paymentMethod" value="upi">
+      UPI
+    </label>
+
+    <label for="netbanking">
+      <input type="radio" id="netbanking" name="paymentMethod" value="netbanking">
+      Net Banking
+    </label>
+
+    <label for="amazonpay">
+      <input type="radio" id="amazonpay" name="paymentMethod" value="amazonpay">
+      Amazon Pay
+    </label>
+
+    <div>
+      <p>Scan the QR code to complete the payment:</p>
+      <img src="placeholder_qr_code.png" alt="QR Code">
+    </div>
+
+    <button type="submit">Proceed to Payment</button>
+  </form>
+</div>
+
+</body>
+</html>

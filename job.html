@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    button:hover{
+      background-color: #0056b3;
+    }
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    <nav style="background-color: #333;">
+        
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+    <main>
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+        
+        <section id="train-list">
+            
+            <h1 style="background-color: #146696; text-align: center; color: #f1f1f1; margin-left: 50px; margin-right: 50px;" >JOBS IN RAILWAY:</h1>
+          
+            <br><br>
+            <p style="font-size: 16px;">Indian Railway Jobs 2023 | Railway Recruitment 2024 Notifications: Ministry of Indian Railways recruitment of Group C, Group D, NTPC, Junior Engineer, RPF, RPSF, Act Apprentices, Level 1 and Level 2 posts. Indian Railways Recruitment and Rail Jobs for 12th pass, 10th pass, SSC / Senior Secondary passed, ITI, Diploma, and any Degree holders.</p>
+          <img src="job.png" alt="photo" style="height: 150px;width: 900px; margin-left: 250px;"><br><br>
+          <b style="margin-left: 100px;">✅ Railway Recruitment 2024 | Upcoming RRB Job Vacancy 2023-24:</b><br>
+          <img src="job2.png" alt="photo" style="margin-left: 350px;height: 500px;">
+          <p>
+            ✅ Railway Exams: Non Technical Popular Categories (NTPC), Paramedical Staff, Railway Group D, Group C posts, Railway Protection Special Force (RPSF) and Railway Protection Force (RPF).
+<br><br>
+✅ Recruitment against Quota: Sports Quota, Scouts & Guides Quota and Cultural Quota.
+
+<br><br>
+✅ Educational Qualifications: Minimum 10th class pass or ITI or equivalent trade for Group C & D Posts. Graduate / Post Graduate for Group A & B Posts.
+<br><br>
+✅ Railway Recruitment Posts: Gazetted (Group 'A' and 'B') and Non-Gazetted (Group 'C' and 'D') in 19 RRBs:-
+<br><br>
+✅ List of Railway Jobs:
+<br><br>
+✔️ Group 'A' Posts ↪ Group A posts is carried out by UPSC - appointed through Civil Service Exam, Engineering Service Exam, and Combined Medical Service Examination.
+<br><br>
+✔️ Group 'B' Posts ↪ This posts are not open to directly. The Group B posts link Section Officers Grade - upgraded posts from Group 'C' railway employees on deputation basis.
+<br><br>
+
+✔️ Group 'C' Posts ↪ Technical and Non-Technical cadre posts like Clerk, Station Master, Ticket Collector, Commercial Apprentice, Traffic Apprentice, Engineering posts (Civil, Mechanical, Electrical, Signal & Telecommunication) etc.
+<br><br>
+✔️ Group 'D' Posts ↪ These posts in various disciplines include Trackman, Helper, Assistant Points Man, Safaiwala / Safaiwali, Gunman, Peon etc.
+<br><br>
+✔️ Other Posts ↪ ITI Apprentices, Sports Quota, Cultural Quota, Scouts and Guides Quota etc.
+
+<br><br>
+✅ Selection Procedure: Written Examination. There is no Interview (Viva Voce) after the written examination. For a very few specific (Group A & B) categories there is a Viva after the written exam, while for certain other categories there is a Skill Test (like typing test or stenography test) and for categories related to operational safety like Assistant Station Master, Assistant Loco Pilot, there will be an Aptitude Test.
+          </p>
+         
+        </section>
+    </main>
+    
+    
+    <footer style="background-color: #333;">
+      <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+      <p style="text-align: right;">
+      <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+      &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+  </footer>
+</body>
+
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+
+</html>

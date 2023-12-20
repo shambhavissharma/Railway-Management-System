@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    button:hover{
+      background-color: #0056b3;
+    }
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    <nav style="background-color: #333;">
+        
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+    <main>
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+        
+        <section id="train-list">
+            
+            <h1 style="background-color: #146696; text-align: center; color: #f1f1f1; margin-left: 50px; margin-right: 50px;" >Matheran-Hill Railway</h1>
+          <p>
+            <b>NERAL - MATHERAN :</b><br><br>
+            A hill resort at an altitude of 800 meters (average height of 2500 feet above sea level), Matheran is 110 km. away from Mumbai on Mumbai-Pune rail route. A narrow gauge toy train from Neral (87 km. from Mumbai) meanders up the mountain, treating the tourists to a breathtaking view. <br><br>
+            
+            Mr. Hugh Poyntz Malet, the then Collector of Thane, discovered Matheran (meaning "forest on the top") in May 1850. Lord Elphinstone, the then Governor of Mumbai laid foundations of the future development of Matheran as a hill station. This 2-foot narrow gauge hill railway, connecting Neral was opened to traffic in 1907. <br><br>
+            
+            This hill railway was built by Sir Adamjee Peerbhoy, who formed a limited company with an authorised capital of ten lakh rupees divided into 2000 shares. The railway is 20 km. (12.6 miles) long and has a gauge of two feet with a ruling gradient of 1 in 20. The track zig zags up the side of the hill, bringing into view the full beauty of the Matheran Hill. <br><br>
+            
+            There are four pairs of train running between Neral and Matheran. However, during monsoon i.e. June to September, only one pair of train is run to open timings. <br> <br>
+          </p>
+         
+        </section>
+    </main>
+    
+    
+    <footer style="background-color: #333;">
+      <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+      <p style="text-align: right;">
+      <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+      &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+  </footer>
+</body>
+
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+
+</html>

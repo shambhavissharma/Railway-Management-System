@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+   
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    
+    <nav style="background-color: #333;">
+        
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center; margin-right: 10px;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+    <main>
+        
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+        
+        <section id="train-list">
+            
+            <h1 style="color: #146696;margin-left: 100px;">Privacy Policy</h1>
+            <p>
+                This Web portal has been designed, developed and maintained by Centre For Railway Information Systems (CRIS), on behalf of Ministry of Railways, Government of India.These terms and conditions shall be governed by and construed in accordance with the Indian Laws. Any dispute arising under these terms and conditions shall be subject to the exclusive jurisdiction of the courts of India.The information posted on this Portal could include hypertext links or pointers to information created and maintained by non – Government/ Private organisations. Indian Railways is providing these links and pointers solely for the information and convenience. When a user selects a link to an outside portal, the user leaves the ‘ Indian Railway Portal’ and is subject to the privacy and security policies of the owners/sponsors of the outside Portal/website.Ministry of Railways does not guarantee that linked websites comply with Indian Government Web Guidelines. Access any part of the Portal;Print off one copy of any or all of the pages for his/her own personal reference. <br><br>
+            </p>
+            <h1 style="color: #146696; margin-left: 100px;">The user may not:</h1>
+            <p>
+                Copy (whether by printing off on to paper, storing on disk, downloading or in any other way), distribute (including distributing copies), broadcast, alter or tamper with in any way or otherwise use any material contained in the portal except as set out under “The user may”. This restrictions apply in relation to all or p[art of the material on Portal;
+<br><br>
+Remove any copyright, other intellectual property notices contained in the original material from any material copied or printed off from the portal;
+<br><br>
+Link to this Portal;
+<br><br>
+…..without the written consent
+<br><br>
+If the user wishes to provide a hypertext or other link to this portal, please contact the website administrator with details of:
+<br><br>
+The URL(s) of the web page(s) from which the user is proposing to link to this portal The URL(s) of the web page(s) on this Portal to which the user is proposing to link …..and request will be considered. Indian Railways has the sole discretion to accept or reject such requests.
+        <br><br>    </p>
+        <h1 style="color:#146696; margin-left: 100px;">Changes In Terms & Conditions</h1>
+        
+        <p>
+            Ministry of Railways may change the terms and conditions and disclaimer set out above from time to time. By browsing this Portal the user accepts that he/she is bound by the current terms and conditions and disclaimer and so the user checks these each time he/she revisits the Portal.
+        </p><br><br>
+
+    
+        <footer style="background-color: #333;width: 100%;height: 100%; margin-bottom: 0; margin-left: 0;">
+          <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+          <p style="text-align: right;">
+          <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+          &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+      </footer>
+</body>
+
+<script>
+    // Get the button element
+    var button = document.querySelector('.collapsible');
+
+    // Get the content element
+    var content = document.querySelector('.content');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Toggle the display of the content
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+</script>
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+</html>

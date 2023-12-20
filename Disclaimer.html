@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+  
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #444;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    * {box-sizing: border-box;}
+
+
+.search-container {
+  float: right;
+}
+
+.input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  a,input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+
+
+
+<body>
+    <header style="background-color: white;color: #ddd;background-color: #333;">
+        <div style="display: flex;margin-left: 430px;">
+          <div><h1 style="margin-top: 40px;">RAILWAY MANAGEMENT SYSTEM</h1></div>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="&nbsp;&nbsp;Search.." name="search" style="width: 250px; height: 30px;margin-top: 40px;margin-left: 130px;font-size: 18px;border-radius: 12px;">
+              <button type="submit" style="margin-top: 40px;height: 30px;margin-left: 10px;background-color: #0056b3;border-radius: 10px;">Submit</button>
+            </form>
+          </div>
+        
+  
+    
+    
+      <div class="collapsible-container"margin-left50px>
+        <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;border-radius: 12px;width: 150px;margin-left: -2650px;position: relative;" >Services</button>
+        <div class="collapsible-content" id="collapsible-section-1" style="border-radius: 15px;margin-left: -1250px;background-color: #7caadb;width: 200px;margin-top: -40px;">
+          <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><hr>
+          <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><hr>
+          <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><hr>
+          <a href="sms.html" style="color: black;">SMS Service</a><br><hr>
+          <a href="affiliate.html" style="color: black;">Affiliate</a><br><hr>
+          <a href="job.html" style="color: black;">Jobs</a>
+        </div>
+      </div>
+    
+      <div class="collapsible-container">
+        <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;border-radius: 12px;width: 150px;margin-left: -2650px;margin-top: 65px;position: relative;">Information</button>
+        <div class="collapsible-content" id="collapsible-section-2" style="border-radius: 15px;margin-left: -1450px;background-color: #7caadb;width: 300px;">
+          <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><hr>
+          <a href="resrules.html" style="color: black;">Reservation Rules</a><br><hr>
+          <a href="refundrules.html" style="color: black;">Refund Rules</a><br><hr>
+          <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><hr>
+            <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><hr>
+            <a href="hill trains.html" style="color: black;">Hill Trains</a><br><hr>
+            <a href="International Tourists.html" style="color: black;">International Tourists</a>
+        </div>
+      </div> 
+    </div>
+    </header>
+    <ul style="background-color: #333;padding: 10px;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html" style="border-radius: 10px;">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html ">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+  <main>
+    <div class="moving-container">
+        <div class="moving-text">
+            <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+        </div>
+    
+    <section id="train-list">
+        
+        <h1 style="color: #146696;margin-left: 100px;">Disclaimer :</h1>
+        
+        <p style="margin-left: 100px;margin-right: 100px;">
+            This IR Web Portal is designed, developed and hosted by Centre For Railway Information Systems (CRIS), on behalf of Ministry of Railways, Government of India.
+<br><br>
+Though all efforts have been made to ensure to accuracy and currency of the content on this Portal, the same should not be construed as a statement of law or used for any legal purposes. CRIS accepts no responsibility in relation to the accuracy, completeness, usefulness or otherwise, of the contents. Users are advised to verify/ check any information with the relevant Government department(s) and /or other source(s), and obtain any appropriate professional advice before acting on the information provided in the Portal.
+<br><br>
+In no event will the Indian Railways be liable for any expense, loss or damage including, without limitation, indirect or consequential loss or damage, or any expense, loss or damage whatsoever arising from use, or loss of use, of data, arising out of or in connection with the use of this portal.
+<br><br>
+Links to other websites that have been included on this portal are provided for public are provided for public convenience only. CRIS is not responsible for the contents or reliability of linked websites and does not necessarily endorse the view expressed within them. We cannot guarantee the availability of such linked pages at the times.
+<br><br>
+Material featured on this portal may be reproduced free of charge after taking proper permission by sending a mail to us. However, the material has to be reproduced accurately and not to be used in a deregulatory manner or in a misleading context. Wherever the material is being published or issued to others, the source must be prominently acknowledged. However, the permission to reproduce this material shall not extend to any material which is identified as being copyright of a third party. Authorisation to reproduce such material must be obtained from the departments/copyright holders concerned.
+<br><br>
+These terms and conditions shall be governed by and construed in accordance with the Indian Laws. Any dispute arising under these terms and conditions shall be subject to the exclusive jurisdiction of the courts of India.
+<br><br>
+All the contents of this Site are for general information only and are not be to relied upon in making (or refraining from making) any decision. Northern Railway hereby excludes any warranty, express or implied, as to the quality, accuracy, timeliness, completeness, performance, fitness for a particular purpose of the Site or any of its contents, including (but not limited to) any financial tools contained within the Site. Northern Railway will not be liable for any damages (including, without limitation, damages for loss of business projects, or loss of profits) arising in contract, tort or otherwise from the use of or inability to use the Site, or any of its contents, or from any action taken (or refrained from being taken) as a result of using the Site or any such contents. Northern Railway makes no warranty that the contents of the Site are free from infection by viruses or anything else which has contaminating or destructive properties.
+<br>
+<br>
+Certain links on the Site lead to resources located on servers maintained by third parties over whom Northern Railway has no control. Northern Railway accepts no responsibility or liability for any of the material contained on those servers.
+<br><br>
+All out-efforts have been made to ensure accuracy and correctness of the information given herein, any omission or error is regretted.
+<br><br>          </p>
+    </section>
+</main>
+
+    <nav style="display: flex; background-color: #333;border-radius: 10px;margin-top: 20px;">
+    <div style="display: flex;">
+      <div style="margin-right: 20px;margin-top: 10px;background-color: #333;margin-left: 30px;">
+        <ul style="width:300px;padding: 0;background-color: #333;">
+          <h2 style="text-align: center;margin-top: 0px;">ABOUT</h2>
+          <li style="margin-left: -80px;margin-top: -10px"><p style="text-align: left;word-spacing: 5px;">Railway Management System facilitates efficient scheduling, ticketing, inventory management, and maintenance, enhancing overall operational efficiency and passenger experience.</p></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 50px;">
+        <ul style="width:150px;background-color: #333;">
+          <h3 style="text-align:center;margin-top:10px">About Us</h3>
+         
+          <li style="margin-left: 15px; margin-left: -75px"><a href="job.html">Jobs</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="affiliate.html">Affiliate</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="contact.html">Contact Us</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="About_IRCTC_eWallet.pdf">E-Wallet</a></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 80px;">
+        <ul style="width:150px ;background-color: #333;">
+          <h3 style="margin-top:10px ;margin-left: -40px;">Terms</h3>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="tc.html">Terms of Use</a></li>
+          <li style="margin-left: 15px;margin-left: -92px"><a href="privacy.html">Privacy Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="refundrules.html">Refund Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="tc.html">Condition</a></li>
+        </ul>
+        
+      </div><div style="margin-right: 20px;background-color: #333;margin-left: 100px;">
+        <ul style="width:400px; background-color: #333;">
+          <h2 style="text-align:center;margin-top:10px">CONTACT</h2>
+          <h5 style="font-size: 18px;">302006, Railway Station Rd, Gopalbari, Jaipur, Rajasthan 302006</h5>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <footer style="background-color:white;">
+        <p style="text-align: center;color: black;margin-top: 30px;">&copy; 2023 Railway Management System</p>
+        <p style="text-align: right;">
+        <a href="Disclaimer.html" style="color: white;margin-right: 50px;color: black;">Disclaimer</a>&nbsp;
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+    
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+button:hover{
+    background-color: #0056b3;
+}
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    
+
+    <nav style="background-color: #333;">
+        
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    <ul style="background-color: #333;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pnr.html">Check PNR</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="cancelticket.html">Cancel Ticket</a></li>
+        
+        <li><a href="train.html">Search Train </a></li>
+        <li><a href="check.html">Check Ticket</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+    </ul>
+<script>
+    // Get the button element
+    var button = document.querySelector('.collapsible');
+
+    // Get the content element
+    var content = document.querySelector('.content');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Toggle the display of the content
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+</script>
+
+        
+       
+    
+    
+    <main>
+        
+        
+        <section id="train-list">
+            <br>
+            
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+          <br>
+            <h1 style="background-color: #146696; text-align: center; color: #f1f1f1; margin-left: 50px; margin-right: 50px;" >Tatkal Scheme:</h1>
+           <p><ul>
+            <li>
+            As per announcement made in the Railway Budget 2013-14, It has been decided to revise Tatkal Charges as given below.</li>
+            <br>
+            <li>
+The Tatkal Charges have been fixed as a percentage of fare at the rate of 10% of basic fare for second class and 30% of basic fare for all other classes subject to minimum and maximum as given in the table below.</li>
+<br></ul>
+           </p>
+           <img src="tatkal.png" alt="tatkal scheme" style="margin-left: 180px ;">
+            <br>
+         <p>
+<ul>
+<li>
+    The above charges will be levied uniformly both in peak period & non-peak periods.
+</li>
+<br>
+<li>
+    Tatkal tickets will be issued for actual distance of travel, instead of end-to-end, subject to the distance restriction applicable to the train. The same Tatkal berth/seat may be booked in multiple legs till preparation of charts. At the time of preparation of charts, unutilized portion may be released to the General RAC/Waiting list passengers.
+</li>
+<br>
+<li>
+    Tatkal facility is also available in Executive Class of Shatabadi Express trains also, by earmarking 10% of the accommodation available i.e. 5 seats per coach.
+</li>
+<br>
+<li>
+    Tatkal booking opens at 10 AM for AC Classes and 11 AM for NON-AC Classes on One days in advance  actual date of journey excluding date of journey w.e.f. of 15.06.2015(commercial circular no:34 of 2015). e.g. for train leaving on 6th, Tatkal Booking will Commence at 10 AM for AC Classes on 5th and at 11 AM for NON-AC Classes on 5th.
+</li>
+<br>
+<li>
+    
+No duplicate Tatkal tickets shall be issued. Duplicate Tatkal tickets shall be issued only in exceptional cases on payment of full fare including Tatkal charges.
+</li>
+<br>
+<li>
+    At the time of Tatkal ticket booking no need to furnish identity proof, Only one passenger needs to produce any one of the following proof of identity in the original during the journey:-
+</li>
+
+</ul>
+<p>
+    1.Voter Photo identity card issued by Election Commision of India.
+<br><br>
+2.Passport
+<br><br>
+3.PAN Card issued by Income Tax Department.
+<br><br>
+4.Driving Licence issued by RTO.
+<br><br>
+5.Photo identity card having serial number issued by Central/State Government.
+<br><br>
+6.Student Identity Card with photograph issued by recognized School/College for their students.
+<br><br>
+7.Nationalized Bank Passbok with photograph.
+<br><br>
+8.Credit cards issued by banks with laminated photograph.
+<br><br>
+9.Unique Identification Card "Aadhaar".
+<br><br>
+10.Photo identity cards having serial number issued by Public Sector Undertaking of State/Central Government, District Administration, Municipal bodies and Penchant Administration.
+<br><br></p>
+<p>
+    <ul>
+        <li>Agents / RTSAs/Web service agents/Web agents of IRCTC are restricted from the booking Tatkal tickets between 1000 hours and 1200 hours. This restriction shall be enforced through frequent inspection at the counters. The agents both web service agents and web agents shall also be restricted from booking Tatkal tickets on the internet between 1000 hours and 1200 hours.</li><br>
+<li>Even for internet booking for Tatkal tickets, the passenger shall enter the identity proof type and number, which is to be used for travel. These details shall be printed on the ERS/indicated on the VRM/MRM as well as in the reservation chart.</li><br>
+<li>It will be possible to book a maximum of only four passengers per PNR forTatkal tickets.</li><br>
+<li>The web services agents of IRCTC will be permitted to book only one Tatkal ticket per train per day on the internet.</li><br>
+<li>The facility of change of name is not permitted on the bookings made under Tatkal scheme.</li><br>
+<li>TDRs are not being issued for waiting list tickets.</li><br>
+<li><b>REFUNDS </b>  - No refund will be granted on cancellation of confirmed Tatkal tickets/duplicate tatkal ticket except in case of circumstances mentioned in para 2 of instructions contained in Commercial Circular no. 53 of 2006 issued vide letter no. 2006/TGII/ 20/P/Tatkal, dated 30.06.2006. However, full refund of fare and tatkal charges will be granted on the tickets booked under Tatkal scheme in the following circumstances :-</li>
+   
+</ul>
+<ol style="margin-left: 80px; margin-right: 80px;">
+   <li> If the train is delayed by more than 3 hours at the journey originating point of the passenger & not the boarding point if the passenger's journey originating point and boarding point are different.</li>
+<br><li>If the train is to run on a diverted route and passenger is not willing to travel.</li>
+<br><li>If the train is to run on diverted route and boarding station or the destination or both the stations are not on the diverted route.</li>
+<br><li>In case of non attachment of coach in which Tatkal accommodation has been earmarked and the passenger has not been provided  accommodation in the same class.</li>
+<br><li>If the party has been accommodated in lower class and does not want to travel. In case the party travels in lower class, the passenger will be given refund of difference of fare and also the difference of Tatkal charges, if any.</li>
+</ol>
+</p>
+
+
+         </p>
+        </section>
+    </main>
+    
+    
+    <footer style="background-color: #333; margin-top: 50px;">
+        <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+        <p style="text-align: right;">
+        <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+        &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+    </footer>
+</body>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+</html>

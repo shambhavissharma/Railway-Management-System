@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+  
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #444;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    * {box-sizing: border-box;}
+
+
+.search-container {
+  float: right;
+}
+
+.input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  a,input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+
+
+
+<body>
+    <header style="background-color: white;color: #ddd;background-color: #333;">
+        <div style="display: flex;margin-left: 430px;">
+          <div><h1 style="margin-top: 40px;">RAILWAY MANAGEMENT SYSTEM</h1></div>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="&nbsp;&nbsp;Search.." name="search" style="width: 250px; height: 30px;margin-top: 40px;margin-left: 130px;font-size: 18px;border-radius: 12px;">
+              <button type="submit" style="margin-top: 40px;height: 30px;margin-left: 10px;background-color: #0056b3;border-radius: 10px;">Submit</button>
+            </form>
+          </div>
+        
+  
+    
+    
+      <div class="collapsible-container"margin-left50px>
+        <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;border-radius: 12px;width: 150px;margin-left: -2650px;position: relative;" >Services</button>
+        <div class="collapsible-content" id="collapsible-section-1" style="border-radius: 15px;margin-left: -1250px;background-color: #7caadb;width: 200px;margin-top: -40px;">
+          <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><hr>
+          <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><hr>
+          <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><hr>
+          <a href="sms.html" style="color: black;">SMS Service</a><br><hr>
+          <a href="affiliate.html" style="color: black;">Affiliate</a><br><hr>
+          <a href="job.html" style="color: black;">Jobs</a>
+        </div>
+      </div>
+    
+      <div class="collapsible-container">
+        <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;border-radius: 12px;width: 150px;margin-left: -2650px;margin-top: 65px;position: relative;">Information</button>
+        <div class="collapsible-content" id="collapsible-section-2" style="border-radius: 15px;margin-left: -1450px;background-color: #7caadb;width: 300px;">
+          <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><hr>
+          <a href="resrules.html" style="color: black;">Reservation Rules</a><br><hr>
+          <a href="refundrules.html" style="color: black;">Refund Rules</a><br><hr>
+          <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><hr>
+            <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><hr>
+            <a href="hill trains.html" style="color: black;">Hill Trains</a><br><hr>
+            <a href="International Tourists.html" style="color: black;">International Tourists</a>
+        </div>
+      </div> 
+    </div>
+    </header>
+    <ul style="background-color: #444;padding: 10px;">
+        <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html" style="border-radius: 10px;">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html ">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+  <main>
+        
+    <div class="moving-container">
+        <div class="moving-text">
+            <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+        </div>
+      </div>
+    
+    <section id="train-list">
+        
+        <h1 style="background-color: #146696; text-align: center; color: #f1f1f1; margin-left: 50px; margin-right: 50px;" >Darjeeling Himalayan Railway:</h1>
+      <p style="margin-left: 100px;margin-right: 100px;">
+        <b>NEW JALPAIGURI - DARJEELING :</b><br><br>
+        The toy train on the Darjeeling Himalayan section is not merely a source of delight for the young and old, it also represents the engineering skills of the highest order. This 83 km. long section connecting Darjeeling with the railhead at Siliguri is of great importance and has been bestowed World Heritage Site status. <br><br>
+
+The railway line from Siliguri to the beautiful hill section of Darjeeling is considered an engineering feat and passes through very picturesque country. <br><br>
+The railway line is laid more or less on the same alignment as the Hill Cart road, which criss-crosses the line at several locations. The line between Sukna and Darjeeling is almost all along located on the road-bench wither skirting or on the far edge of the road except at a few locations where the road and rail formations are on different level and follow a different alignment. Out of a total of 87.48 km., 64 kms. Are on the same road bench. The actual climb starts from Sukna encountering steep gradients and curves all the way long. There are some peculiar features to be marked during the journey. The train passes through dense forest from Sukna and it chugs along the hill slopes and at places where a clear path is not available. The climb is through reverse and loops. There are 5 such reverses, 3 loops, the most famous being the BATASIA LOOP between Ghum and Darjeeling. Apart from this, the section has 5 major, 498 minor bridges and 177 unmanned level crossings. There are 14 stations including New Jalpaiguri and Darjeeling with an average inter distance of 6 to 7 km. Except between Siliguri and Sukna where the distance is over 10 km., Ghum station is the second highest railway station in the world to be reached by steam locomotive. <br><br>
+
+The Darjeeling-Himalayan railway extends from New Jalpaiguri to Darjeeling, which is a distance of 87.48 kms. The construction was started by Franklin Prestage in 1879 and completed up to Tindharia in March 1880. By the year end, it was constructed up tp Kurseong and the line reached Darjeeling in July 1881. <br><br>
+
+Darjeeling Railway Company managed the line up to 1948 before it was purchased outright and made to form a part of the Indian Railway. It became a part of the Assam Railway and was absorbed as a constituent of the newly grouped Northeastern Railway on 14 April 1950. Because of further regrouping, the DHR was transferred to the Northeast Frontier Railway in 1958. <br><br>
+
+The DHR attained peak operational capacity in 1947 with 45 loco, 139 passenger coaches and 606 goods wagons. Goods trains were operated up to 1992-93. Thereafter, keeping 12-15 unit of goods wagons, the rest were withdrawn and disposed. <br><br>
+
+      </p>
+     <img src="dar.png" alt="table" style="margin-left: 160px;">
+    </section>
+</main>
+
+    <nav style="display: flex; background-color: #333;border-radius: 10px;margin-top: 20px;">
+    <div style="display: flex;">
+      <div style="margin-right: 20px;margin-top: 10px;background-color: #333;margin-left: 30px;">
+        <ul style="width:300px;padding: 0;background-color: #333;">
+          <h2 style="text-align: center;margin-top: 0px;">ABOUT</h2>
+          <li style="margin-left: -80px;margin-top: -10px"><p style="text-align: left;word-spacing: 5px;">Railway Management System facilitates efficient scheduling, ticketing, inventory management, and maintenance, enhancing overall operational efficiency and passenger experience.</p></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 50px;">
+        <ul style="width:150px;background-color: #333;">
+          <h3 style="text-align:center;margin-top:10px">About Us</h3>
+         
+          <li style="margin-left: 15px; margin-left: -75px"><a href="job.html">Jobs</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="affiliate.html">Affiliate</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="contact.html">Contact Us</a></li>
+          <li style="margin-left: 15px;margin-left: -75px"><a href="About_IRCTC_eWallet.pdf">E-Wallet</a></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 80px;">
+        <ul style="width:150px ;background-color: #333;">
+          <h3 style="margin-top:10px ;margin-left: -40px;">Terms</h3>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="tc.html">Terms of Use</a></li>
+          <li style="margin-left: 15px;margin-left: -92px"><a href="privacy.html">Privacy Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="refundrules.html">Refund Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -90px"><a href="tc.html">Condition</a></li>
+        </ul>
+        
+      </div><div style="margin-right: 20px;background-color: #333;margin-left: 100px;">
+        <ul style="width:400px; background-color: #333;">
+          <h2 style="text-align:center;margin-top:10px">CONTACT</h2>
+          <h5 style="font-size: 18px;">302006, Railway Station Rd, Gopalbari, Jaipur, Rajasthan 302006</h5>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <footer style="background-color:white;">
+        <p style="text-align: center;color: black;margin-top: 30px;">&copy; 2023 Railway Management System</p>
+        <p style="text-align: right;">
+        <a href="Disclaimer.html" style="color: white;margin-right: 50px;color: black;">Disclaimer</a>&nbsp;
+        
+    </footer>
+</body>
+</html>

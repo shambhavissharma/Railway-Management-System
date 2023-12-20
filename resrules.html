@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    
+    <nav style="background-color: #333;">
+        
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pnr.html">Check PNR</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="cancelticket.html">Cancel Ticket</a></li>
+        
+        <li><a href="train.html">Search Train </a></li>
+        <li><a href="check.html">Check Ticket</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+    </ul>
+    <main style="margin-left: 100px; margin-right: 100px;">
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+        
+        <section id="train-list" >
+            
+            <h1 style="background-color: #146696;color: white;text-align: center;" >RESERVATION RULES</h1>
+            <P><B>
+                IMPORTANT - FOR SENIOR CITIZENS :</B></P>
+            <p>From 1st September 2001 onwards, concession to senior citizens through PRS (Passenger Reservation System) shall be granted only on demand and not by default as at present. The demand for concession shall be made on Reservation Requisition form in the case of reserved tickets. In the case of tickets issued to senior citizens on concession, during journey the concerned passengers are instructed to carry some documentary proof showing their age or date of birth, issued by any Government Institution/Agency/Local Body. like Identity card, Driving License, Passport, Educational certificate, certificate from Local Bodies like Panchayat/Corporation/Municipality, or any other authentic and recognised document. This documentary proof of age should be produced if demanded by some Railway official during the journey.</p>
+                <p>The minimum age for availing concession is 58 years in case of <b>WOMEN SENIOR CITIZENS</b> and element of concession is 50% in Basic Fare only.</p>
+                <p>The minimum age for availing concession is 60 years in case of <b>MEN SENIOR CITIZENS</b> and element of concession is 40% in Basic Fare only.</p>
+                <p>There will be no change in other terms and conditions in both the cases.(Railway Board No.TCII/2161/2011/SRC/Policy  dated 13.05.2011)
+                </p>
+                <p><b>GENERAL CONDITIONS :</b></p>
+                <p>The Railway Administration reserves seats, berths, compartments, or carriage in accordance with the rules and conditions published in the Coaching Tariff. A passenger seeking reservation of berth or seats should purchase tickets from the Railway Reservation Offices/Authorised Travel Agency only.
+                    <br>
+                    Advance reservations are made generally up to 120 days in advance for all classes and all trains. The period of advance reservation (ARP) is exclusive of the day of departure of the train.
+                    <br>
+                    At intermediate stations where the train arrives on the following day, such reservations can be done more than 120 days in advance of date of journey from the intermediate station. ARP is in relation to the date of journey from train originating station. In case of some Inter-city day trains, the ARP is less.
+                    <br>
+                    An individual can book only up to six passengers on one requisition form provided all passengers are for the same destination and for the same train.
+                    <br>
+                    w.e.f. 01-12-2012,any one of the passenger booked on a PNR for undertaking journey in any class will have to produce any one of the 10 prescribed proofs of identity in original) during the journey failing which all  the passengers booked on that ticket will be treated as traveling  without ticket and charged accordingly. (ref. Railway Board letter no.2011/TG-I/20/P/ID dated 01-11-2012)</p>
+                    
+                    <p>
+                        1.Voter Photo identity card issued by Election Commision of India.
+<br>
+2.Passport
+<br>
+3.PAN Card issued by Income Tax Department.
+<br>
+4.Driving Licence issued by RTO.
+<br>
+5.Photo identity card having serial number issued by Central/State Government.
+<br>
+6.Student Identity Card with photograph issued by recognized School/College for their students.
+<br>
+7.Nationalized Bank Passbok with photograph.
+<br>
+8.Credit cards issued by banks with laminated photograph.
+<br>
+9.Unique Identification Card "Aadhaar".
+<br>
+10.Photo identity cards having serial number issued by Public Sector Undertaking of State/Central Government, District Administration, Municipal bodies and Penchant Administration.
+    <br>                </p>
+<p style="justify-content: center;">
+    As per railway board letter no.2011/tg-i/20/p/id dated 10.01.2013 attested photocopy of ration card with photograph and nationalized bank passbook with photographs shall also be accepted as a prescribed proof of identity <b>only in case of reserved tickets booked through computerized passenger reservation system (PRS) counters, for undertaking journey in sleeper (SL) and second reserved sitting (2S) classes.</b> the photocopy of the ration card with photograph and nationalized bank passbook with photograph should be attested by gazetted officer or the chief reservation supervisor or station manager/station master.
+<br><br>
+The above provision is <b>not applicable</b> for all classes of e-tickets & tatkal tickets and tickets issued through prs counter for travelling in air-conditioned classes and first class. travelling with these categories of tickets shall continue to be governed by existing instructions.
+<br><br>
+Only one requisition form is accepted from a person at one time. However, if onward/return journey are involved, 2 or 3 forms can be accepted for the same passengers.
+<br><br>
+Accommodation will not be reserved without purchase of necessary journey ticket. No reservation of accommodation will be made on provisional basis.
+<br><br>
+When berths are reserved for passengers, the intention is to provide sleeping accommodation between 9 PM to 6 AM. During 6 AM to 9 PM, the passengers concerned, if required make room for other passengers in compartment up to its carrying capacity.
+<br><br>
+Passengers are requested to quote PNR number which is printed on each tickets on the top left hand side for any enquiry or complaint relating to reservations.
+<br><br>
+Reservation ticket issued by the computerised system against pre-bought ticket must be accompanied by the journey tickets on train. Similarly journey cum reservation tickets bearing zero amount are not valid for journey unless accompanied by the valid authority to travel authorising issue of such tickets.
+<br><br>
+Allotment of accommodation is done by the computer as per pre-defined logic. Efforts are made to provide compact accommodation to persons booked under the same PNR on first come first served basis.
+<br><br>
+The Railway Administration will endeavour to provide reserved accommodation but does not guarantee the same and will admit no claim for compensation for inconvenience, loss or extra expense due to such accommodation including carriages, not being provided or reserved carriage not been attached to a particular train. The supply of any particular type of carriage or the provision of a particular berth and seat is also not guaranteed.
+<br><br>
+Departure time printed on the ticket is indicative for the guidance of the passengers. Passengers must ascertain correct timings from the Railway station on the day of journey. Such tickets are printed up to 120 days in advance. Any changes in timing after the issue of ticket can not be advised.
+<br><br>
+While every endeavour is made to advise changes in Time Table by due publicity, Railway Administration shall not be liable for any claim/compensation if a passenger misses a train on this account.
+</p>
+
+
+
+
+
+        </section>
+    </main>
+    
+    
+    <footer style="background-color: #333;">
+        <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+        <p style="text-align: right;">
+        <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+        &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+    </footer>
+</body>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+<script>
+    // Get the button element
+    var button = document.querySelector('.collapsible');
+
+    // Get the content element
+    var content = document.querySelector('.content');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Toggle the display of the content
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+</script>
+</html>

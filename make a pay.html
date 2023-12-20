@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        header {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .collapsible-container {
+            margin-bottom: 20px;
+        }
+
+        .collapsible-btn {
+            background-color: #001e82;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: white;
+            color: black;
+        }
+
+        .collapsible-content p {
+            margin: 0;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .moving-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .moving-text {
+            white-space: nowrap;
+            display: inline-block;
+            animation: moveText 15s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Railway Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="pnr.html">Check PNR</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <!-- Add your other navigation links -->
+        </ul>
+
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+                <!-- Add your service links here -->
+            </div>
+        </div>
+
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+                <!-- Add your information links here -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="moving-container">
+        <div class="moving-text">
+            <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <h1>Make a Payment</h1>
+            <p>Select your payment method:</p>
+
+            <form action="#" method="post" id="paymentForm">
+                <label for="upi">
+                    <input type="radio" id="upi" name="paymentMethod" value="upi">
+                    UPI
+                </label>
+
+                <label for="netbanking">
+                    <input type="radio" id="netbanking" name="paymentMethod" value="netbanking">
+                    Net Banking
+                </label>
+
+                <label for="amazonpay">
+                    <input type="radio" id="amazonpay" name="paymentMethod" value="amazonpay">
+                    Amazon Pay
+                </label>
+
+                <div>
+                    <p>Scan the QR code to complete the payment:</p>
+                    <img src="placeholder_qr_code.png" alt="QR Code">
+                </div>
+
+                <button type="submit">Proceed to Payment</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Railway Management System</p>
+        <p>
+            <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+            &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleCollapsible(sectionNumber) {
+            var content = document.getElementById("collapsible-section-" + sectionNumber);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

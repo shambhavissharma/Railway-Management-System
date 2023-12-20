@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 15s linear infinite;
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding-left: 65px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+<body>
+    <header style="background-color: #333;">
+        <h1 >Railway Management System</h1>
+    </header>
+    
+    <nav style="background-color: #333;">
+       
+        <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(1)" style="text-align: center;">Services</button>
+            <div class="collapsible-content" id="collapsible-section-1">
+              <a href="mts.html" style="color: black;">Mobile Ticketing Service</a><br><br>
+              <a href="https://enquiry.indianrail.gov.in/mntes/" style="color: black;">National Train Enquiry System</a><br><br>
+              <a href="ROT.html" style="color: black;">Registration of Train/Coach on Full Tariff Rate(FTR)</a><br><br>
+              <a href="sms.html" style="color: black;">SMS Service</a>
+            </div>
+          </div>
+        
+          <div class="collapsible-container">
+            <button class="collapsible-btn" onclick="toggleCollapsible(2)" style="text-align: center;">Information</button>
+            <div class="collapsible-content" id="collapsible-section-2">
+              <a href="cateringcharges.html" style="color: black;">Catering Charges</a><br><br>
+              <a href="resrules.html" style="color: black;">Reservation Rules</a><br><br>
+              <a href="tatkal.html" style="color: black;">Tatkal Scheme</a><br><br>
+                <a href="LTT.html" style="color: black;">Luxury Tourist Trains</a><br><br>
+                <a href="hill trains.html" style="color: black;">Hill Trains</a><br><br>
+                <a href="International Tourists.html" style="color: black;">International Tourists</a>
+            </div>
+          </div>   
+    </nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr.html">Check PNR</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="cancelticket.html">Cancel Ticket</a></li>
+      
+      <li><a href="train.html">Search Train </a></li>
+      <li><a href="check.html">Check Ticket</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+    <main>
+        
+        
+        <section id="train-list">
+            
+        <div class="moving-container">
+            <div class="moving-text">
+                <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+            </div>
+          </div>
+            <h1 style="background-color: #146696; text-align: center; color: #f1f1f1; margin-left: 50px; margin-right: 50px;" >Nilgiri-Mountain Railway</h1>
+          <p>
+            <b>METTUPALAIYAM - OOTY :</b><br><br>
+            It was in 1854, that the first plans were made to build a mountain Railway from Mettupalaiyam to the Nilgiri Hills. But it took the decision-makers 45 years to cut through the bureaucratic red tape and complete the construction and installation of the line.	<br><br>
+            The line was completed and opened for traffic in June 1899. It was operated first by the Madras Railway under an agreement with the Government. <br> <br>
+            
+            The Madras Railway Company continued to manage this railway line on behalf of the government for a long time until the South Indian Railway company purchased it. The line was extended to Ootacamund from Coonoor some time in 1908 on the same gauge over a distance of 11 and 3/4 miles at a cost of Rs. 24,40,000.
+            <br><br>
+            The steepest gradient on this line is 1 in 23 and there is no rack on it as provided between Coonoor and Mettupalaiyam. <br><br>
+                The Railway line from Mettupalaiyam to Ooty is 45.88 km. long and lies partly in Coimbatore District and partly in Nilgiri District of Tamilnadu, on the eastern slopes of the Western Ghats. Mettupalaiyam is at the foothills with an elevation of about 330 meters and Udagamandalam (Ooty) on the plateau with an elevation of 2200 metres. The average gradient of this line is about 1 in 24.5. <br><br>
+            The gauge is laid to Meter gauge (1000 mm). The sharpest curve on the section is 17.5 degrees. <br><br>
+            
+            The track is made of 50 lb rails. There are 250 bridges on the section, out of which 32 are major ones and 15 are road over bridges.
+            <br><br>
+            There are 16 tunnels between Kallar and Ooty all of which are in excellent condition.
+            <br><br>
+            The section from Mettupalaiyam to Udagamandalam is provided with stone ballast and the cushion varies from 75 mm to 150 mm.
+            <br><br>
+            The Maximum permissible speed on Mettupalaiyam-Kallar and Coonoor-Udagamandalam "Non-Rack" system is 30 while between Kallar and Coonoor "RACK" section the maximum permissible speed is 13 kmph.The region covered by the Nilgiri Mountain Railway gets rainfall during the south-west and north-east monsoons. The average rainfall is of the order of 1250 mm at Udagamandalam, 1400 mm at Coonoor and 500 mm at Mettupalaiyam. The Nilgiri Mountain Railway keeps chugging despite the downpour.
+  <br><br>        </p>
+         
+        </section>
+    </main>
+
+    
+    <footer style="background-color: #333;">
+      <p style="text-align: center;">&copy; 2023 Railway Management System</p>
+      <p style="text-align: right;">
+      <a href="Disclaimer.html" style="color: white;">Disclaimer</a>&nbsp;
+      &nbsp;|&nbsp;&nbsp;<a href="tc.html" style="color: white;">Terms & Conditions</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="contact.html" style="color: white;">Contact Us</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html" style="color: white;">Privacy & Policy</a></p>
+  </footer>
+</body>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+</html>

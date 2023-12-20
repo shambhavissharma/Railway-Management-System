@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Railway Management System</title>
+    
+</head>
+<style>
+  
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #444;
+}
+
+li {
+  float: left;
+  padding-left: 50px;
+  color: #ccc;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #ddddddee;
+        }
+      
+        
+        .collapse {
+            display: none;
+        }
+        .collapsed {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            text-size-adjust: 15px;
+        }
+
+        .collapsible-container {
+  margin-bottom: 20px;
+}
+
+.collapsible-btn {
+  background-color: #001e82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-content p {
+  margin: 0;
+}
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .moving-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: moveText 20s linear infinite;
+    }
+    * {box-sizing: border-box;}
+
+
+.search-container {
+  float: right;
+}
+
+.input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  a,input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+
+<script>
+    function toggleCollapsible(sectionNumber) {
+    var content = document.getElementById("collapsible-section-" + sectionNumber);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  </script>
+<style>
+ .dropdown {
+            display: inline-block;
+            margin-left: 10px; /* Adjust margin as needed */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px; /* Adjust border radius as needed */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0056b3;
+            border-radius: 10px;
+        }
+</style>
+
+
+
+<body>
+    <header style="background-color: white;color: #ddd;background-color: #444;">
+        <div style="display: flex;margin-left: 430px;">
+          <div><h1 style="margin-top: 40px;">RAILWAY MANAGEMENT SYSTEM</h1></div>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="&nbsp;&nbsp;Search.." name="search" style="width: 250px; height: 30px;margin-top: 40px;margin-left: 130px;font-size: 18px;border-radius: 12px;">
+              <button type="submit" style="margin-top: 40px;height: 30px;margin-left: 10px;background-color: #0056b3;border-radius: 10px;">Submit</button>
+            </form>
+          </div>
+    </div>
+    </header>
+    <nav>
+      <ul style="background-color: #333; padding: 10px;">
+          
+        <li class="dropdown">
+          <a href="#" style="border-radius: 10px;">Services</a>
+          <div class="dropdown-content" style="border-radius: 12px;background-color: #559fef;text-align: center;">
+              <a href="mts.html">Mobile Ticketing Service</a>
+              <a href="https://enquiry.indianrail.gov.in/mntes/">National Train Enquiry System</a>
+              <a href="ROT.html">Full Tariff Rate(FTR)</a>
+              <a href="sms.html">SMS Service</a>
+              <a href="affiliate.html">Affiliate</a>
+              <a href="job.html">Jobs</a>
+          </div>
+      </li>
+      <li class="dropdown">
+          <a href="#" style="border-radius: 10px;">Information</a>
+          <div class="dropdown-content" style="border-radius: 12px;background-color: #559fef;">
+              <a href="cateringcharges.html">Catering Charges</a>
+              <a href="resrules.html">Reservation Rules</a>
+              <a href="refundrules.html">Refund Rules</a>
+              <a href="tatkal.html">Tatkal Scheme</a>
+              <a href="LTT.html">Luxury Tourist Trains</a>
+              <a href="hill trains.html">Hill Trains</a>
+              <a href="International Tourists.html">International Tourists</a>
+          </div>
+      </li>
+          <li><a href="pnr.html">Check PNR</a></li>
+          <li><a href="booking.html">Book Ticket</a></li>
+          <li><a href="cancelticket.html">Cancel Ticket</a></li>
+          <li><a href="train.html">Search Train</a></li>
+          <li><a href="check.html">Check Ticket</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+      </ul>
+  </nav>
+  <style>
+    #imageSlider {
+        width: 100%;
+        height: 500px;
+        max-width: 1473px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    #imageContainer {
+        display: flex;
+        transition: transform 2s ease-in-out;
+    }
+
+    .image {
+        width: 100%;
+    }
+</style>
+    <section class="hero">
+        
+      <div id="imageSlider" style="width: 1473px;height: 500px;">
+        <div id="imageContainer" style="height: 500px;width: 1473px;">
+            <img class="image" src="in.webp" alt="Image 1" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 1 (1).jpg" alt="Image 2" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 10.png" alt="Image 3" style="height: 500px;width:1473px ;">
+            <img class="image" src="pxfuel (1).jpg" alt="Image 4" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 5.jpg" alt="Image 5" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="pxfuel (2).jpg" alt="Image 6" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="pxfuel.jpg" alt="Image 7" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 12.png" alt="Image 8" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 13.png" alt="Image 9" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="in.webp" alt="Image 10" style="height: 500px;width: 1473px; ;">
+            <!-- Duplicate images for seamless transition -->
+            <img class="image" src="in.webp" alt="Image 1" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 1 (1).jpg" alt="Image 2" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 10.png" alt="Image 3" style="height: 500px;width:1473px ;">
+            <img class="image" src="pxfuel (1).jpg" alt="Image 4" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 5.jpg" alt="Image 5" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="pxfuel (2).jpg" alt="Image 6" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="pxfuel.jpg" alt="Image 7" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 12.png" alt="Image 8" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 13.png" alt="Image 9" style="height: 500px;width: 1473px; ;">
+            <img class="image" src="photo 1 (1).jpg" alt="Image 10" style="height: 500px;width: 1473px; ;">
+        </div>
+    </div>
+<!-- Your existing script for the image slider -->
+<script>
+  const imageContainer = document.getElementById('imageContainer');
+  const totalImages = 10; // Adjust this based on the total number of images
+  let currentIndex = 0;
+
+  function showNextImage() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      const translateValue = -currentIndex * 100;
+      imageContainer.style.transition = 'transform 2s ease-in-out';
+      imageContainer.style.transform = `translateX(${translateValue}%)`;
+
+      // Reset transition and move to the first image after the last one
+      if (currentIndex === totalImages - 1) {
+          setTimeout(() => {
+              imageContainer.style.transition = 'none';
+              currentIndex = 0;
+              imageContainer.style.transform = 'translateX(0)';
+          }, 2000);
+      }
+  }
+
+  setInterval(showNextImage, 6000);
+</script>
+
+    </section>
+    <div class="moving-container">
+        <div class="moving-text">
+            <h3>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</h3>
+        </div>
+      </div>
+    <main>
+        <section id="welcome">
+            <h2 style="text-align: center;">Welcome to the Railway Management System</h2>
+            <p style="text-align: center;">Book tickets, check schedules, and more!</p>
+        </section>
+        
+        <section id="train-list">
+            
+            <p style="margin-left: 100px; margin-right: 100px;">India has some of the most spectacular and unforgettable rail journeys in the world. Here you experience a simple way to find out everything you need to know in one easy place. There's no better way to enjoy India's outback, cities, coastal towns and regional areas in comfort.</p>
+            
+              <p style="margin-left: 100px;margin-right: 100px;">
+                The <b>Standard Operating Protocol (SOP)</b> for the passengers travelling in the special trains are as under: <br><br>
+      1. Passengers with confirmed e-tickets will be permitted to enter the railway station premises.<br><br>
+      2. Both the passenger movement and the driver of the vehicle ferrying passengers to and from the station will be allowed entry depending on the confirmed e-ticket.<br><br>
+      3. All the passengers will be screened to identify and give entry to only asymptomatic passengers to board the train.<br><br>
+      4. Passengers will have to arrive at the departure station at least 90 minutes before the departure time of the train.<br><br>
+      5.Passengers will be given hand sanitizers at all entry and exit points as well as on board the train.<br><br>
+      6.All the passengers will have to wear face cover in the station premises and during train travel.<br><br>
+      7.Social distancing has to be strictly maintained during the train journey.<br><br>
+      8.Health advisories and guidelines will be spread by the Railway Ministry with the help of Information, Education and Communication campaign for the railways staff and passengers.
+              </p>
+            
+        </section>
+    </main>
+    <style>
+      label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    </style>
+    
+    <nav style="display: flex; background-color: #333;border-radius: 10px;margin-top: 20px;">
+    <div style="display: flex;">
+      <div style="margin-right: 20px;margin-top: 10px;background-color: #333;margin-left: 30px;">
+        <ul style="width:300px;padding: 0;background-color: #333;">
+          <h2 style="text-align: center;margin-top: 0px;">ABOUT</h2>
+          <li style="margin-left: -30px;margin-top: -10px"><p style="text-align: left;word-spacing: 5px;justify-items: center;">Railway Management System facilitates efficient scheduling, ticketing, inventory management, and maintenance, enhancing overall operational efficiency and passenger experience.</p></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 50px;">
+        <ul style="width:400px; background-color: #333;">
+          <h2 style="text-align:center;margin-top:10px">CONTACT</h2>
+          <h5 style="font-size: 18px;">302006, Railway Station Rd, Gopalbari, Jaipur, Rajasthan 302006</h5>
+          
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 50px;">
+        <ul style="width:150px;background-color: #333;">
+          <h3 style="text-align:center;margin-top:10px;margin-left: -30px;" >About Us</h3>
+         
+          <li style="margin-left: 15px; margin-left: -55px"><a href="job.html">Jobs</a></li>
+          <li style="margin-left: 15px;margin-left: -55px"><a href="affiliate.html">Affiliate</a></li>
+          <li style="margin-left: 15px;margin-left: -55px"><a href="contact.html">Contact Us</a></li>
+          <li style="margin-left: 15px;margin-left: -55px"><a href="About_IRCTC_eWallet.pdf">E-Wallet</a></li>
+        </ul>
+      </div>
+      <div style="margin-right: 20px;background-color: #333;margin-left: 80px;">
+        <ul style="width:170px ;background-color: #333;">
+          <h3 style="margin-top:10px ;margin-left: -90px;">Terms</h3>
+          <li style="margin-left: 15px;margin-left: -60px"><a href="tc.html">Terms of Use</a></li>
+          <li style="margin-left: 15px;margin-left: -60px"><a href="privacy.html">Privacy Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -60px"><a href="refundrules.html">Refund Policy</a></li>
+          <li style="margin-left: 15px;margin-left: -60px"><a href="tc.html">Condition</a></li>
+        </ul>
+        
+      </div>
+    </div>
+    </nav>
+    <footer style="background-color:white;">
+        <p style="text-align: center;color: black;margin-top: 30px;">&copy; 2023 Railway Management System</p>
+        <p style="text-align: right;">
+        <a href="Disclaimer.html" style="color: white;margin-right: 50px;color: black;">Disclaimer</a>&nbsp;
+        
+    </footer>
+</body>
+</html>
